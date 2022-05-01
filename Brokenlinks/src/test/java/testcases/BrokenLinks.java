@@ -10,9 +10,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import base.TestBase;
 
-public class BrokenLinks extends TestBase {
+import base.BaseClass;
+
+public class BrokenLinks extends BaseClass {
 
 	String url = "";
 	String homePage = "http://www.amazon.in";
@@ -21,9 +22,9 @@ public class BrokenLinks extends TestBase {
 
 	@Test
 	public void broken() throws  InterruptedException, MalformedURLException {
-
-		driver = launchBrowser("Chrome");
-		// driver.manage().window().maximize();
+		driver=launchBrowser("Chrome");
+		Thread.sleep(5000);
+		driver.manage().window().maximize();
 		driver.get(homePage);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
